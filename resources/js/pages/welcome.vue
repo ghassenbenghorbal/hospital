@@ -15,13 +15,9 @@
         </Link>
       </div>
     </v-app-bar>
-    <v-main>
-      <v-container>
         <v-card>
           <v-card-title>Welcome to Laravel Inertia Vuetify</v-card-title>
         </v-card>
-      </v-container>
-    </v-main>
   </guest-layout>
 </template>
 

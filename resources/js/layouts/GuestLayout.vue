@@ -1,6 +1,10 @@
 <template>
-  <v-app style="background-color: #f5f5f5">
-    <slot />
+  <v-app style="background-color: #f5f5f5 !important;">
+    <v-main>
+      <v-container fluid>
+        <slot />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
@@ -25,3 +29,8 @@ export default {
   },
 };
 </script>
+<style>
+  html, body {
+    background-color: #f5f5f5;
+  }
+</style>

@@ -9,6 +9,11 @@ import { Link } from "@inertiajs/inertia-vue";
 import vuetify from "./plugins/vuetify";
 import { InertiaProgress } from "@inertiajs/progress";
 
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
+
 Vue.use(InertiaPlugin);
 Vue.component("Link", Link);
 Vue.mixin({ methods: { route: window.route } });
@@ -26,4 +31,4 @@ new Vue({
     })
 }).$mount(app);
 
-InertiaProgress.init({ color: "#fff" });
+InertiaProgress.init({ color: "#ef5350" });

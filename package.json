@@ -16,10 +16,10 @@
     },
     "devDependencies": {
         "@mdi/font": "^5.9.55",
-        "axios": "^0.21",
+        "axios": "^0.21.4",
         "bootstrap": "^4.6.0",
         "jquery": "^3.6",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.43",
         "lodash": "^4.17.19",
         "popper.js": "^1.16.1",
         "postcss": "^8.1.14",
@@ -34,6 +34,8 @@
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-vue": "^0.7.2",
         "@inertiajs/progress": "^0.2.6",
+        "apexcharts": "^3.35.0",
+        "vue-apexcharts": "^1.6.2",
         "vue-toastification": "^1.7.11",
         "vuetify": "^2.5.8"
     }

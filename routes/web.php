@@ -19,10 +19,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('welcome');
+    return Inertia::render('auth/login');
 })->name('/');
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function() {
+    Route::get('home', [HomeController::class, 'index'])->name('home');
+});
+
 Route::resource('employee', EmployeeController::class)->only(['index', 'store', 'update', 'destroy']);
 
 require __DIR__.'/auth.php';

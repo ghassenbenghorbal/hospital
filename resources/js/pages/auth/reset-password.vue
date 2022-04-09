@@ -1,14 +1,10 @@
 <template>
   <guest-layout>
-    <v-main>
-      <v-container fluid>
         <v-row align="center" justify="center" style="height: 100vh">
           <v-col cols="12" sm="12" md="10" lg="4">
             <v-card>
               <v-card-title class="d-flex align-center justify-center">
-                <Link :href="route('/')">
                   <application-logo style="height: 75" />
-                </Link>
               </v-card-title>
               <v-card-text>
                 <p class="mb-2">You are only one step a way from your new password, recover your password now.</p>
@@ -37,7 +33,7 @@
                     :type="showPassword ? 'text' : 'password'"
                     @click:append="showPassword = !showPassword"
                   />
-                  <v-btn :loading="form.processing" type="submit" block color="primary" class="mt-3"
+                  <v-btn :loading="form.processing" type="submit" block color="red lighten-1" dark class="mt-3"
                     >Change Password</v-btn
                   >
                 </v-form>
@@ -45,8 +41,6 @@
             </v-card>
           </v-col>
         </v-row>
-      </v-container>
-    </v-main>
   </guest-layout>
 </template>
 

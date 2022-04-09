@@ -1,14 +1,10 @@
 <template>
-  <v-app>
-    <v-main>
-      <v-container fluid>
+  <guest-layout>
         <v-row align="center" justify="center" style="height: 100vh">
           <v-col cols="12" sm="12" md="10" lg="4">
             <v-card>
               <v-card-title class="d-flex align-center justify-center">
-                <Link :href="route('/')">
                   <application-logo style="height: 75" />
-                </Link>
               </v-card-title>
               <v-card-text v-if="status">
                 <v-alert type="success">{{ status }}</v-alert>
@@ -27,7 +23,7 @@
                     dense
                     :error-messages="form.errors.email"
                   />
-                  <v-btn :loading="form.processing" type="submit" block color="primary" class="mt-3"
+                  <v-btn :loading="form.processing" type="submit" block color="red lighten-1" dark class="mt-3"
                     >Request New Password</v-btn
                   >
                 </v-form>
@@ -35,18 +31,18 @@
             </v-card>
           </v-col>
         </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+      </guest-layout>
 </template>
 
 <script>
 import ApplicationLogo from "../../components/ApplicationLogo.vue";
+import GuestLayout from "../../layouts/GuestLayout.vue"
+
 export default {
   props: {
     status: String,
   },
-  components: { ApplicationLogo },
+  components: { ApplicationLogo, GuestLayout},
   data() {
     return {
       showPassword: false,

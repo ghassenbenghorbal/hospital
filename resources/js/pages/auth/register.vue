@@ -1,21 +1,17 @@
 <template>
   <guest-layout>
-    <v-main>
-      <v-container fluid>
         <v-row align="center" justify="center" style="height: 100vh">
           <v-col cols="12" sm="12" md="10" lg="4">
             <v-card>
               <v-card-title class="d-flex align-center justify-center">
-                <Link :href="route('/')">
                   <application-logo style="height: 75" />
-                </Link>
               </v-card-title>
-              <v-card-text>
+              <!-- <v-card-text>
                 <p class="text-2xl font-weight-semibold text--primary mb-2">
                   Adventure starts here 🚀
                 </p>
                 <p class="mb-2">Make your app management easy and fun!</p>
-              </v-card-text>
+              </v-card-text> -->
               <v-card-text>
                 <v-form @submit.prevent="register">
                   <v-text-field
@@ -58,7 +54,7 @@
                     :type="showPassword ? 'text' : 'password'"
                     @click:append="showPassword = !showPassword"
                   />
-                  <v-btn :loading="form.processing" type="submit" block color="primary" class="mt-3"
+                  <v-btn :loading="form.processing" type="submit" block color="red lighten-1" dark class="mt-3"
                     >Register</v-btn
                   >
                 </v-form>
@@ -72,8 +68,6 @@
             </v-card>
           </v-col>
         </v-row>
-      </v-container>
-    </v-main>
   </guest-layout>
 </template>
 
