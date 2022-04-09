@@ -6,7 +6,7 @@
             <v-list-item>
                 <v-list-item-title class="text-center"><span class="button text-uppercase font-weight-light">
                         <v-avatar color="red lighten-2" size="32">
-                            <span style="color:white">{{$page.props.auth.user.name[0]}}</span>    
+                            <span style="color:white">{{$page.props.auth.user.name[0]}}</span>
                         </v-avatar>
                         {{$page.props.auth.user.name}}
                     </span></v-list-item-title>
@@ -32,7 +32,7 @@
 
     </v-navigation-drawer>
     <!-- Tablet and below -->
-    <v-app-bar color="white" flat app style="z-index:50">
+    <v-app-bar color="white" elevation="1" app style="z-index:50">
         <!-- Tablet and below -->
         <v-container fluid class="py-0 fill-height hidden-md-and-up">
             <v-avatar class="mr-10" color="red lighten-4" size="32">
