@@ -35,7 +35,7 @@ class TemperatureController extends Controller
     public function store(Request $request)
     {
         $validatedRequest = $request->validate([
-            'block' => 'required|max:8',
+            'block_id' => 'required|max:8',
             'temp' => 'required|digits_between:1,3',
         ]);
         $temperature = Temperature::create([

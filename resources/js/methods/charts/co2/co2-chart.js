@@ -2,14 +2,14 @@
 const getCo2Data = async (block, date) => {
     const resp = await axios
                             .get('/api/health/co2', {
-                                auth: {
-                                    username: 'admin@admin.com',
-                                    password: 'ghassen1999'
-                                },
                                 params:{
                                     block_id:block,
                                     date:date
                                 }
+                            },{
+                                headers: {
+                                    Authorization: `Bearer 5|mdddlqoOH4PUih5OQntwD3573otk8CL6kvRRHiQg`,
+                                },
                             }).catch(error => console.log(error))
     return [{name:"Quantity",data:resp.data.data}]
 }
@@ -18,8 +18,11 @@ const co2ChartOptions = {
     chart: {
         id: 'co2-chart'
     },
+    stroke: {
+        curve:"smooth"
+    },
     markers: {
-        size: 4
+        size: 1
     },
     title: {
         text: "Co2"
@@ -28,8 +31,12 @@ const co2ChartOptions = {
         show: true,
         position: "top"
     },
-    xaxis:{
-        
+    xaxis: {
+        tickAmount: 5,
+        labels: {
+            rotate:0,
+            hideOverlappingLabels: true,
+        }
     },
     yaxis: {
         forceNiceScale:true,

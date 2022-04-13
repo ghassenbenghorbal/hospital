@@ -2,14 +2,14 @@
 const getMovementData = async (block, date) => {
     const resp = await axios
                             .get('/api/health/movement', {
-                                auth: {
-                                    username: 'admin@admin.com',
-                                    password: 'ghassen1999'
-                                },
                                 params:{
                                     block_id:block,
                                     date:date
                                 }
+                            },{
+                                headers: {
+                                    Authorization: `Bearer 5|mdddlqoOH4PUih5OQntwD3573otk8CL6kvRRHiQg`,
+                                },
                             }).catch(error => console.log(error))
     return [{name:"People",data:resp.data.data}]
 }
@@ -18,8 +18,11 @@ const movementChartOptions = {
     chart: {
         id: 'movement-chart'
     },
+    stroke: {
+        curve:"smooth"
+    },
     markers: {
-        size: 4
+        size: 1
     },
     title: {
         text: "Movement"
@@ -35,11 +38,14 @@ const movementChartOptions = {
     },
     decimalsInFloat: 0,
     xaxis: {
+        tickAmount: 5,
         labels: {
+            rotate:0,
+            hideOverlappingLabels: true,
             formatter: function (value) {
                 return value + "H";
             }
-        },
+        }
     },
     yaxis: {
         min:0,

@@ -2,16 +2,8 @@
   <guest-layout>
         <v-row align="center" justify="center" style="height: 100vh">
           <v-col cols="12" sm="12" md="10" lg="4">
+            <application-logo/>
             <v-card>
-              <v-card-title class="d-flex align-center justify-center">
-                  <application-logo style="height: 75" />
-              </v-card-title>
-              <!-- <v-card-text>
-                <p class="text-2xl font-weight-semibold text--primary mb-2">
-                  Adventure starts here 🚀
-                </p>
-                <p class="mb-2">Make your app management easy and fun!</p>
-              </v-card-text> -->
               <v-card-text>
                 <v-form @submit.prevent="register">
                   <v-text-field
@@ -60,7 +52,7 @@
                 </v-form>
               </v-card-text>
               <v-card-text
-                class="d-flex align-center justify-center flex-wrap mt-2"
+                class="d-flex align-center justify-center flex-wrap "
               >
                 <span class="me-2"> Already have an account? </span>
                 <Link :href="route('login')"> Sign in instead </Link>

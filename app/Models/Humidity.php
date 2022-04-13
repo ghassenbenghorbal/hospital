@@ -10,7 +10,7 @@ class Humidity extends Model
     use HasFactory;
 
     protected $fillable = [
-        'block',
+        'block_id',
         'percentage',
         'created_at'
     ];

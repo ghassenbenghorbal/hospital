@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         // Employee::factory(50)->create();
         // Block::factory(5)->create();
-        // Co2::factory(200)->create();
-        // Humidity::factory(200)->create();
-        // Movement::factory(200)->create();
+        Co2::factory(200)->create();
+        Humidity::factory(200)->create();
+        Movement::factory(200)->create();
         Temperature::factory(200)->create();
     }
 }

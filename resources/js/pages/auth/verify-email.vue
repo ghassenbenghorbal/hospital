@@ -2,10 +2,8 @@
   <guest-layout>
         <v-row align="center" justify="center" style="height: 100vh">
           <v-col cols="12" sm="12" md="10" lg="4">
+            <application-logo/>
             <v-card>
-              <v-card-title class="d-flex align-center justify-center">
-                  <application-logo style="height: 75" />
-              </v-card-title>
               <v-card-text>
                 <p class="font-weight-semibold text--primary mb-2">
                   Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.

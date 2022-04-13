@@ -10,7 +10,7 @@ class Movement extends Model
     use HasFactory;
 
     protected $fillable = [
-        'block',
+        'block_id',
         'created_at'
     ];
 }

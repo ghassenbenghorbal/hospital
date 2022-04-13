@@ -2,10 +2,8 @@
   <guest-layout>
         <v-row align="center" justify="center" style="height: 100vh">
           <v-col cols="12" sm="12" md="10" lg="4">
+            <application-logo/>
             <v-card>
-              <v-card-title class="d-flex align-center justify-center">
-                  <application-logo style="height: 75" />
-              </v-card-title>
               <v-card-text>
                 <p class="mb-2">You are only one step a way from your new password, recover your password now.</p>
               </v-card-text>

@@ -10,7 +10,7 @@ class Co2 extends Model
     use HasFactory;
 
     protected $fillable = [
-        'block',
+        'block_id',
         'quantity',
         'created_at'
     ];

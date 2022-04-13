@@ -36,7 +36,7 @@
         <!-- Tablet and below -->
         <v-container fluid class="py-0 fill-height hidden-md-and-up">
             <v-avatar class="mr-10" color="red lighten-4" size="32">
-                <v-icon color="red">mdi-hospital-building</v-icon>
+                <v-icon color="red">mdi-hospital</v-icon>
             </v-avatar>
             <v-spacer></v-spacer>
             <v-app-bar-nav-icon style="color:red" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -44,7 +44,7 @@
         <!-- Laptop and above -->
         <v-container fluid class="py-0 fill-height hidden-sm-and-down">
             <v-avatar class="mr-10" color="red lighten-4" size="32">
-                <v-icon color="red">mdi-hospital-building</v-icon>
+                <v-icon large color="red">mdi-hospital</v-icon>
             </v-avatar>
 
             <v-btn v-for="(item, i) in items" :key="i" @click="goToPage(item.to)" class="mr-1" v-text="item.title" rounded small :text="route().current() == item.to ? false : true" :color="route().current() == item.to ? 'error' : ''" :dark="route().current() == item.to ? true : false" :elevation="route().current() == item.to ? 1 : 0" />
@@ -60,7 +60,7 @@
                 </template>
                 <v-list dense width="200" max-width="300" class="py-0">
                     <v-subheader class="pl-4">Manage Account</v-subheader>
-                    <v-list-item link>
+                    <v-list-item link @click="profile()">
                         <v-list-item-content>
                             <v-list-item-title>Profile</v-list-item-title>
                         </v-list-item-content>
@@ -145,6 +145,9 @@ export default {
         },
     },
     methods: {
+        profile() {
+            this.$inertia.get('/profile')
+        },
         logout() {
             this.$inertia.post("/logout");
         },

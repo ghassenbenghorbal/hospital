@@ -10,7 +10,7 @@ class Temperature extends Model
     use HasFactory;
 
     protected $fillable = [
-        'block',
+        'block_id',
         'temp',
         'created_at'
     ];

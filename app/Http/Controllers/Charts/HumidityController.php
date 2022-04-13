@@ -35,7 +35,7 @@ class HumidityController extends Controller
     public function store(Request $request)
     {
         $validatedRequest = $request->validate([
-            'block' => 'required|max:8',
+            'block_id' => 'required|max:8|numeric',
             'percentage' => 'required|digits_between:1,3',
         ]);
         $humidity = Humidity::create([

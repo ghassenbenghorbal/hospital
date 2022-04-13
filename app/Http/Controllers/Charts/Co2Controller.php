@@ -35,16 +35,16 @@ class Co2Controller extends Controller
     public function store(Request $request)
     {
         $validatedRequest = $request->validate([
-            'block' => 'required|max:8',
+            'block_id' => 'required|max:8|numeric',
             'quantity' => 'required|digits_between:1,5',
         ]);
+        
         $co2 = Co2::create([
             "block_id" => $request->block_id,
             "quantity" => $request->quantity
         ]);
         $co2->save();
         return $co2;
-
     }
 
 }

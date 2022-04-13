@@ -25,6 +25,7 @@
       :server-items-length="items.total"
       :loading="isLoadingTable"
       class="elevation-1"
+      items-per-page="5"
     >
       <template #[`item.index`]="{ index }">
         {{ (options.page - 1) * options.itemsPerPage + index + 1 }}

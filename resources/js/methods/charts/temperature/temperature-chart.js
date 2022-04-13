@@ -2,15 +2,15 @@
 const getTemperatureData = async (block, date) => {
     const resp = await axios
                             .get('/api/health/temperature', {
-                                auth: {
-                                    username: 'admin@admin.com',
-                                    password: 'ghassen1999'
-                                },
                                 params:{
                                     block_id:block,
                                     date:date
                                 }
-                            }).catch(error => console.log(error))
+                                },{
+                                    headers: {
+                                        Authorization: `Bearer 5|mdddlqoOH4PUih5OQntwD3573otk8CL6kvRRHiQg`,
+                                    },
+                                }).catch(error => console.log(error))
     return [{name:"Temperature",data:resp.data.data}]
 }
 //Options
@@ -18,8 +18,11 @@ const temperatureChartOptions = {
     chart: {
         id: 'temperature-chart'
     },
+    stroke: {
+        curve:"smooth"
+    },
     markers: {
-        size: 4
+        size: 1
     },
     title: {
         text: "Temperature"
@@ -36,6 +39,13 @@ const temperatureChartOptions = {
             }
         },
         forceNiceScale:true,
+    },
+    xaxis: {
+        tickAmount: 5,
+        labels: {
+            rotate:0,
+            hideOverlappingLabels: true,
+        }
     },
     noData: {
         text: 'Loading...'
