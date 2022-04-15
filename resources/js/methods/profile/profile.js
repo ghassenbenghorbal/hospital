@@ -28,7 +28,7 @@ const changePassword = async (block, date) => {
 }
 const generateApiToken = async (token_name) => {
     const resp = await axios
-                            .post('/api/generate-token/', {
+                            .post('/profile/generate-token/', {
                                 token_name: token_name
                             },{
                                 headers: {

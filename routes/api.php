@@ -27,7 +27,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
     Route::get('employee', [EmployeeController::class, 'index']);
 });
-Route::middleware('auth.basic')->post('generate-token', [UserController::class, 'generateApiToken']);
 Route::middleware('auth:sanctum')->prefix('health')->group(function() {
     Route::resource('co2', Co2Controller::class)->only(['index', 'store']);
     Route::resource('humidity', HumidityController::class)->only(['index', 'store']);

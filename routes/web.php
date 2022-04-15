@@ -25,7 +25,12 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function() {
     Route::get('home', [HomeController::class, 'index'])->name('home');
-    Route::get('profile', [UserController::class, 'index'])->name('profile');
+    Route::prefix('profile')->group(function(){
+        Route::get('/', [UserController::class, 'index'])->name('profile');
+        Route::put('change-password', [UserController::class, 'changePassword']);
+        Route::put('change-profile', [UserController::class, 'changeProfile']);
+        Route::post('generate-token', [UserController::class, 'generateApiToken']);
+    });
 });
 
 Route::resource('employee', EmployeeController::class)->only(['index', 'store', 'update', 'destroy']);
